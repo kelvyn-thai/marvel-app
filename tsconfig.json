@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitReturns": false,
+        "noImplicitThis": false,
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "App/*": ["src/client/modules/App/*"],
+            "Home/*": ["src/client/modules/Home/*"],
+            "NotFound/*": ["src/client/modules/NotFound/*"],
+            "Redux/*": ["src/client/redux/*"],
+        }
+    },
+    "include": [
+        "./src/**/*"
+    ],
+}
