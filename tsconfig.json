@@ -12,8 +12,12 @@
         "paths": {
             "App/*": ["src/client/modules/App/*"],
             "Home/*": ["src/client/modules/Home/*"],
+            "Comics/*": ["src/client/modules/Comics/*"],
+            "Share/*": ["src/client/modules/Share/*"],
             "NotFound/*": ["src/client/modules/NotFound/*"],
             "Redux/*": ["src/client/redux/*"],
+            "Config": ["src/client/config/index.ts"],
+            "ApiServices": ["src/client/api/index.ts"],
         }
     },
     "include": [

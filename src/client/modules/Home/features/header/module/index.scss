@@ -1,0 +1,45 @@
+.home-header {
+  background-color: #393939;
+  .home-header-upper {
+    .menu {
+      display: flex;
+      li {
+        height: 60px;
+        line-height: 60px;
+        a {
+          color: #fff;
+          display: block;
+          .logo{
+          }
+          img {
+           
+          }
+          &:hover {
+            background-color: #151515;
+          }
+        }
+      }
+    }
+  }
+  .home-header-lower {
+    .category {
+      display: flex;
+      justify-content: center;
+      li {
+        a {
+          padding: 10px;
+          display: block;
+          color: white;
+          font-size: 13px;
+          font-weight: bold;
+          border-bottom: solid transparent 2px;
+          transition: 0.5s all;
+          &:hover {
+            border-bottom: solid red 2px;
+            transition: 0.5s all;
+          }
+        }
+      }
+    }
+  }
+}

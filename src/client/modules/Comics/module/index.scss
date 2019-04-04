@@ -1,0 +1,57 @@
+@keyframes animiate-comic-item {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.page-comics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
+  min-height: 100vh;
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .comic-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    margin: 10px;
+    animation: animiate-comic-item 1.5s linear;
+    .comic-item-image {
+      margin-bottom: 20px;
+      box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
+      a {
+        img {
+          max-width: 100%;
+          width: 285px;
+          height: 427.5px;
+        }
+      }
+    }
+    .comic-item-text {
+      h5 {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+}

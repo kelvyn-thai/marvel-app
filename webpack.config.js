@@ -10,12 +10,17 @@ module.exports = {
     devtool: "source-map",
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx","jsx", ".js", ".json"],
+        extensions: [".ts", ".tsx", "jsx", ".js", ".json"],
         alias: {
             App: path.resolve(__dirname, 'src/client/modules/App'),
             Home: path.resolve(__dirname, 'src/client/modules/Home'),
+            Comics: path.resolve(__dirname, 'src/client/modules/Comics'),
+            Share: path.resolve(__dirname, 'src/client/modules/Share'),
             NotFound: path.resolve(__dirname, 'src/client/modules/NotFound'),
             Redux: path.resolve(__dirname, 'src/client/redux'),
+            Config: path.resolve(__dirname, 'src/client/config/index.ts'),
+            ApiServices: path.resolve(__dirname, 'src/client/api/index.ts'),
+
         }
     },
 
@@ -25,26 +30,24 @@ module.exports = {
     },
     module: {
         rules: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { 
-                test: /\.tsx?$/, loader: "ts-loader" 
+            {
+                test: /\.tsx?$/, loader: "ts-loader"
             },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { 
-                enforce: "pre", test: /\.jsx?$/, loader: "source-map-loader" 
+            {
+                enforce: "pre", test: /\.jsx?$/, loader: "source-map-loader"
             },
             {
                 test: /\.s?css$/,
-                use: ['style-loader', 'css-loader',  'sass-loader']
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|gif|svg|eot|woff|woff2|ttf)$/,
                 use: [
-                  {
-                    loader: 'file-loader',
-                  }
+                    {
+                        loader: 'file-loader',
+                    }
                 ]
-              }
+            }
         ]
 
     },
@@ -54,11 +57,13 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
-    // devServer: {
-    //     headers: {
-    //         'Access-Control-Allow-Origin': '*',
-    //     },
-    //     historyApiFallback: true,
-    //     contentBase: path.join(__dirname, 'public'),
-    // }
+    devServer: {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        },
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, 'assets'),
+    }
 }
