@@ -65,5 +65,10 @@ module.exports = {
         },
         historyApiFallback: true,
         contentBase: path.join(__dirname, 'assets'),
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     }
 }
