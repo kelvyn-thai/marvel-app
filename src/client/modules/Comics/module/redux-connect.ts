@@ -1,5 +1,5 @@
 import { comicsSelector } from "./reselect";
-import { actionRequestFetchComicsMarvel } from "./actions";
+import { actionRequestFetchComicsMarvel, actionSortComicsByField, actionSearchComicsByKey } from "./actions";
 
 export const mapStateToProps = state => ({
     comics:  comicsSelector(state)
@@ -7,5 +7,7 @@ export const mapStateToProps = state => ({
 
 
 export const mapDispatchToProps = {
-    fetchComicsMarvel: actionRequestFetchComicsMarvel
+    fetchComicsMarvel: actionRequestFetchComicsMarvel,
+    actionSortComics: actionSortComicsByField,
+    actionSearchComics: actionSearchComicsByKey
 }

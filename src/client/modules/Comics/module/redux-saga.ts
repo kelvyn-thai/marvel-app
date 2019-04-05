@@ -6,21 +6,23 @@ import ComicsApi from "./api";
 function* actionRequetsFetchComicsMarvel(action) {
     try {
         yield put(actionFetchingComicsMarvel());
-        const params = action.payload;
+        const { limit, page} = action.payload;
+        const params = {
+            limit,
+            offset: (page - 1) * limit
+        }
         const { data } = yield call(ComicsApi.apiGetComicsMarvel, params);
         if (data.code === 200) {
             const {
                 total,
-                limit,
                 results,
-                count
             } = data.data;
             const payload = {
-                count,
-                limit,
                 results,
-                offset: params.offset,
-                total,
+                page,
+                limit,
+                totalRecords: total,
+                totalPages: Math.ceil(total / params.limit)
             }
             yield put(actionFetchedComicsMarvel(payload));
         }

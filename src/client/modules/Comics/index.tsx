@@ -1,53 +1,56 @@
 import * as React from 'react';
 import withComics from './withComics';
 import ComicItem from './features/comic-item';
-import { BeatLoader } from 'react-spinners';
-import * as _ from 'lodash';
+import Pagination from "react-js-pagination";
 
 interface IProps {
     comics: any;
-    fetchComicsMarvel: (payload: any) => ({type: string, payload: any})
+    onPageChange: (page: number) => void;
+    fetchComicsMarvel: (payload: any) => ({ type: string, payload: any });
 }
 
+const RenderComicsItem = (props: any) => props.comicsList.map(comicItem =>
+    <ComicItem
+        key={comicItem.id}
+        comic={comicItem}
+    />)
+
+
 class Comics extends React.Component<IProps, any>{
-    // componentDidMount() {
-    //     window.addEventListener("scroll", _.throttle(this.onScroll, 1000), false);
-    // }
-    // componentWillUnmount() {
-    //     window.removeEventListener("scroll", this.onScroll, false);
-    // }
-    // onScroll = () => {
-    //     const isTouchedEndPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
-    //     const { offset, limit, results, total } = this.props.comics.data;
-    //     const isLoadedAllRecords = results.length === total;
-    //     if (isTouchedEndPage && !isLoadedAllRecords) {
-    //         const params = {
-    //             limit,
-    //             offset: offset + limit
-    //         }
-    //         this.props.fetchComicsMarvel(params);
-    //     }
-    // };
     render() {
-        const { data, status } = this.props.comics;
+        const {
+            results,
+            page,
+            limit,
+            totalRecords,
+        } = this.props.comics.data;
+        const {
+            sortBy,
+            keySearch,
+            resultsWithKeySearch
+        } = this.props.comics;
         return (
-            <div className="page-comics">
-                {data.results.map(comicItem =>
-                    <ComicItem
-                        key={comicItem.id}
-                        comic={comicItem}
-                    />)
-                }
-                {status === "fetching" &&
-                    <div className="spinner">
-                        <BeatLoader
-                            sizeUnit={"px"}
-                            size={15}
-                            color={'rgb(54, 215, 183)'}
-                            loading={true}
-                        />
-                    </div>
-                }
+            <div className="page-comics-block">
+                <div className="page-comics-block-sort">
+                   
+                </div>
+                <div className="page-comics-block-search">
+                </div>
+                <div className="page-comics-block-items">
+                    {keySearch.trim() !== "" ?
+                        <RenderComicsItem comicsList={resultsWithKeySearch} /> :
+                        <RenderComicsItem comicsList={results} />
+                    }
+                </div>
+                <div className="page-comics-block-pagination">
+                    <Pagination
+                        activePage={page}
+                        itemsCountPerPage={limit}
+                        totalItemsCount={totalRecords}
+                        pageRangeDisplayed={5}
+                        onChange={(page) => this.props.onPageChange(page)}
+                    />
+                </div>
             </div>
         )
     }

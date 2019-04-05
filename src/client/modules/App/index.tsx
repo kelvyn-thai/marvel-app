@@ -5,6 +5,7 @@ import { Switch } from "react-router";
 import store from 'Redux/store';
 import Home from 'Home/index';
 import NotFound from 'NotFound/index';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "Share/scss/reset-css.scss";
 
 
