@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
@@ -25,8 +26,8 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -55,7 +56,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'manifest/index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.HashedModuleIdsPlugin()
     ],
     devServer: {
         headers: {
@@ -67,8 +69,15 @@ module.exports = {
         contentBase: path.join(__dirname, 'assets'),
     },
     optimization: {
+        runtimeChunk: 'single',
         splitChunks: {
-            chunks: 'all'
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
         }
     }
 }

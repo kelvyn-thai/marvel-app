@@ -33,8 +33,8 @@ app.get('*', (req, res, next) => {
     </head>
     <body>
         <div id="root"></div>
-        <script src="bundle.js"></script>
-    </body>
+        <script type="text/javascript" src="runtime.cb192db615be855f0bf1.js"></script><script type="text/javascript" src="vendors.09d58670a086a438e845.js"></script><script type="text/javascript" src="main.a5b67de606fdc59f2132.js"></script></body>
+        </body>
     </html>
     `)
 });
