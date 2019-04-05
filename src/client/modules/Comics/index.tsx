@@ -10,10 +10,11 @@ interface IProps {
 }
 
 const RenderComicsItem = (props: any) => props.comicsList.map(comicItem =>
-    <ComicItem
-        key={comicItem.id}
-        comic={comicItem}
-    />)
+        <ComicItem
+            key={comicItem.id}
+            comic={comicItem}
+        />
+)
 
 
 class Comics extends React.Component<IProps, any>{
@@ -32,7 +33,7 @@ class Comics extends React.Component<IProps, any>{
         return (
             <div className="page-comics-block">
                 <div className="page-comics-block-sort">
-                   
+
                 </div>
                 <div className="page-comics-block-search">
                 </div>

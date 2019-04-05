@@ -2,7 +2,7 @@ import * as React from 'react';
 import "./module/index.scss";
 
 
-class HomePageFooter extends React.Component<any, any>{
+class ComicsPageFooter extends React.Component<any, any>{
     render(){
         return (
             <div className="home-footer">
@@ -12,4 +12,4 @@ class HomePageFooter extends React.Component<any, any>{
     }
 }
 
-export default HomePageFooter;
+export default ComicsPageFooter;

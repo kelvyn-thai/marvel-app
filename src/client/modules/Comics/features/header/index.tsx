@@ -1,6 +1,5 @@
 import * as React from 'react';
 import "./module/index.scss";
-import withHeader from './withHeader';
 import SearchBox from 'Comics/features/search-box';
 import SortBox from 'Comics/features/sort-box';
 
@@ -8,7 +7,7 @@ interface IProps {
 
 }
 
-class HomePageHeader extends React.Component<IProps, any>{
+class ComicsPageHeader extends React.Component<IProps, any>{
     render() {
         return (
             <div className="home-header">
@@ -45,4 +44,4 @@ class HomePageHeader extends React.Component<IProps, any>{
     }
 }
 
-export default withHeader(HomePageHeader);
+export default ComicsPageHeader;

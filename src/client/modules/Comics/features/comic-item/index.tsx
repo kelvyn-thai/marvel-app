@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link, Switch } from 'react-router-dom';
 
 interface IProps {
     comic: any
@@ -7,6 +8,7 @@ interface IProps {
 class ComicItem extends React.Component<IProps, any>{
     render() {
         const {
+            id,
             resourceURI,
             title,
             thumbnail
@@ -15,9 +17,9 @@ class ComicItem extends React.Component<IProps, any>{
         return (
             <div className="comic-item">
                 <div className="comic-item-image">
-                    <a href={resourceURI} target="_blank">
+                    <Link to={`/comic/${id}`}>
                         <img src={imageSrc} alt={`image ${title}`} />
-                    </a>
+                    </Link>
                 </div>
                 <div className="comic-item-text">
                     <h5>{title}</h5>

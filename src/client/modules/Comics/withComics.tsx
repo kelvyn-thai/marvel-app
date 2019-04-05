@@ -6,12 +6,14 @@ import { mapStateToProps, mapDispatchToProps } from './module/redux-connect';
 import ErrorBoundary from 'Share/modules/error-boudary';
 import { BeatLoader } from 'react-spinners';
 import './module/index.scss';
+import ComicsPageFooter from './features/footer';
+import ComicsPageHeader from './features/header';
 
 interface IProps {
     comics: any;
     fetchComicsMarvel: (params: any) => ({ type: string, payload: any })
-    actionSortComics: (sortBy: string) => ({type: string, payload: string});
-    actionSearchComics: (keySearch: string) => ({type: string, payload: string})
+    actionSortComics: (sortBy: string) => ({ type: string, payload: string });
+    actionSearchComics: (keySearch: string) => ({ type: string, payload: string })
 }
 
 
@@ -65,8 +67,12 @@ const enhance = WrappedComponent =>
                 )
             }
             return (
-                <div className="page-comics">
-                    {content}
+                <div className="wrap">
+                    <ComicsPageHeader />
+                    <div className="page-comics">
+                        {content}
+                    </div>
+                    <ComicsPageFooter />
                 </div>
             );
         }
