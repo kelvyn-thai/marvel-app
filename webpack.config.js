@@ -21,13 +21,12 @@ module.exports = {
             Redux: path.resolve(__dirname, 'src/client/redux'),
             Config: path.resolve(__dirname, 'src/client/config/index.ts'),
             ApiServices: path.resolve(__dirname, 'src/client/api/index.ts'),
-
         }
     },
 
     output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'assets/build')
     },
     module: {
         rules: [
@@ -67,6 +66,8 @@ module.exports = {
         },
         historyApiFallback: true,
         contentBase: path.join(__dirname, 'assets'),
+        contentBase: './',
+        hot: true
     },
     optimization: {
         runtimeChunk: 'single',

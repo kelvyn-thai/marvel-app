@@ -1,0 +1,51 @@
+.page-comic {
+  width: 100%;
+  background-color: #030306;
+  min-height: 100vh;
+  color: #fff;
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .page-comic-block {
+    width: 80%;
+    margin: 0 auto;
+    .page-comic-block-details {
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      .page-comic-block-details-thumbnail{
+        margin: 10px;
+        img {
+          width: 450px;
+          height: 680px;   
+        }
+      }
+      .page-comic-block-details-description{
+        margin: 10px;
+        width: 500px;
+        height: auto;
+        .description{
+          font-weight: 600;
+        }
+        .creator{
+          display: flex;
+          flex-direction: column;
+          margin: 30px 0;
+          li{
+            h5{
+              font-weight: bold;
+              &::first-letter{
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+    .page-comic-block-purchase {
+    }
+  }
+}
