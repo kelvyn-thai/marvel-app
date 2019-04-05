@@ -1,6 +1,6 @@
 # marvel-app
-# Clone project: git clone https://github.com/thainguyenhoangphatit/marvel-app.git
-# Build a web app that display the comics from Marvel API.
+* Clone project: git clone https://github.com/thainguyenhoangphatit/marvel-app.git
+* Build a web app that display the comics from Marvel API.
 
 Feature must have:
 - List all comics
