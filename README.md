@@ -1,4 +1,5 @@
 # marvel-app
+* Product: https://peaceful-river-32062.herokuapp.com/
 * Clone project: git clone https://github.com/thainguyenhoangphatit/marvel-app.git
 * Build a web app that display the comics from Marvel API.
 
