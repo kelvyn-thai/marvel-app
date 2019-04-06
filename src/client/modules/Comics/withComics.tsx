@@ -13,24 +13,41 @@ interface IProps {
     comics: any;
     fetchComicsMarvel: (params: any) => ({ type: string, payload: any })
     actionSortComics: (sortBy: string) => ({ type: string, payload: string });
-    actionSearchComics: (keySearch: string) => ({ type: string, payload: string })
+    actionSearchComics: (keySearch: string) => ({ type: string, payload: string });
+    cachePageComicsMarvel: (pageCached: any) => ({type: string, payload: any});
 }
 
 
 const enhance = WrappedComponent =>
     class extends React.Component<IProps, any>{
         componentDidMount() {
-            const { limit, page } = this.props.comics.data;
-            const params = {
-                limit,
-                page
+            const {cached, data} = this.props.comics;
+            const { limit, page } = data;
+            const pageCached = cached.find(pageComics => pageComics.page == page);
+            if(!pageCached){
+                const params = {
+                    limit,
+                    page
+                }
+                this.props.fetchComicsMarvel(params); 
             }
-            this.props.fetchComicsMarvel(params);
         }
 
         onPageChange = (page) => {
-            const { limit, totalPages } = this.props.comics.data;
-            if (page >= 1 && page <= totalPages) {
+            const {cached, data} = this.props.comics;
+            const { limit, totalPages, totalRecords } = data;
+            const pageCached = cached.find(pageComics => pageComics.page == page);
+            if(!!pageCached){
+                const payload = {
+                    results: pageCached.results,
+                    page,
+                    limit,
+                    totalPages,
+                    totalRecords
+                }
+                this.props.cachePageComicsMarvel(payload);   
+            }
+            else if (page >= 1 && page <= totalPages) {
                 const params = {
                     limit,
                     page

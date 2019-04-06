@@ -2,6 +2,7 @@ import * as React from 'react';
 import "./module/index.scss";
 import SearchBox from 'Comics/features/search-box';
 import SortBox from 'Comics/features/sort-box';
+import ViewsBox from 'Comics/features/views-box';
 
 interface IProps {
 
@@ -30,9 +31,7 @@ class ComicsPageHeader extends React.Component<IProps, any>{
                             <SearchBox />
                         </li>
                         <li>
-                            <a href="#">
-                                <span className="logo"></span>
-                            </a>
+                            <ViewsBox />
                         </li>
                         <li>
                             <SortBox />

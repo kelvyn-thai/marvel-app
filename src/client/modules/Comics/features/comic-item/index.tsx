@@ -9,7 +9,6 @@ class ComicItem extends React.Component<IProps, any>{
     render() {
         const {
             id,
-            resourceURI,
             title,
             thumbnail
         } = this.props.comic;

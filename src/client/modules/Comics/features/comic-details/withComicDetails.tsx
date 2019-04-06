@@ -16,12 +16,21 @@ interface MatchParams {
 interface IProps extends RouteComponentProps<MatchParams> {
     comic: any;
     fetchComicMarvel: (idComic: string) => ({ type: string, payload: any });
+    cacheComicMarvel: (comic: any) => ({type: string, payload: any});
 }
 
 const enhance = WrappedComponent =>
     class extends React.Component<IProps, any>{
         componentDidMount() {
-            this.props.fetchComicMarvel(this.props.match.params.id)
+            const { cache } = this.props.comic;
+            const comicId = this.props.match.params.id;
+            const comicCacched = cache.find(comic => comic.id == comicId);
+            if(!!comicCacched){ 
+                this.props.cacheComicMarvel(comicCacched);
+            }   
+            else{
+                this.props.fetchComicMarvel(comicId);
+            }
         }
         render() {
             const { status } = this.props.comic;

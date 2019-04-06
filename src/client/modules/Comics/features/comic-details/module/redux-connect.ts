@@ -1,5 +1,5 @@
 import { comicSelector } from "./reselect";
-import { actionRequestFetchComicMarvel} from "./actions";
+import { actionRequestFetchComicMarvel, actionFetchedComicMarvel} from "./actions";
 
 export const mapStateToProps = state => ({
     comic:  comicSelector(state)
@@ -8,4 +8,5 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = {
     fetchComicMarvel: actionRequestFetchComicMarvel,
+    cacheComicMarvel: actionFetchedComicMarvel
 }

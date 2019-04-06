@@ -16,28 +16,28 @@
       padding: 50px;
       display: flex;
       justify-content: center;
-      .page-comic-block-details-thumbnail{
+      .page-comic-block-details-thumbnail {
         margin: 10px;
         img {
           width: 450px;
-          height: 680px;   
+          height: 680px;
         }
       }
-      .page-comic-block-details-description{
+      .page-comic-block-details-description {
         margin: 10px;
         width: 500px;
         height: auto;
-        .description{
+        .description {
           font-weight: 600;
         }
-        .creator{
+        .creator {
           display: flex;
           flex-direction: column;
           margin: 30px 0;
-          li{
-            h5{
+          li {
+            h5 {
               font-weight: bold;
-              &::first-letter{
+              &::first-letter {
                 text-transform: uppercase;
               }
             }
@@ -47,5 +47,67 @@
     }
     .page-comic-block-purchase {
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page-comic {
+    .page-comic-block {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail img {
+    width: 260px;
+    height: 400px;
+  }
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    margin: 10px;
+    width: 400px;
+    height: auto;
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .page-comic .page-comic-block .page-comic-block-details {
+    flex-direction: column;
+  }
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail {
+    margin: 0 auto;
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  } 
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    margin: 10px;
+    width: 300px;
+    height: auto;
+    h1 {
+      font-size: 18px;
+    }
+    .creator{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .page-comic .page-comic-block .page-comic-block-details {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+ 
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    width: 280px;
   }
 }

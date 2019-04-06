@@ -4,6 +4,7 @@ const initailStateComics = {
     status: "",
     data: {
     },
+    cache: []
 }
 export default (state = initailStateComics, action) => {
     switch (action.type) {
@@ -14,12 +15,15 @@ export default (state = initailStateComics, action) => {
             }
         }
         case ACTION_FETCHED_COMIC: {
+            const comic = {...action.payload};
+            const isComicCached = state.cache.some(comicCached => comicCached.id == comic.id);
+            let newCache = [...state.cache];
+            !isComicCached ? newCache.push(comic) : false;
             return {
                 ...state,
                 status: "fetched",
-                data: {
-                    ...action.payload
-                }
+                data: comic,
+                cache: newCache
             }
         }
         case ACTION_FETCH_FAIL_COMIC: {
