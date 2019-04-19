@@ -1,6 +1,6 @@
 import * as React from 'react';
 import withComicDetails from './withComicDetails';
-import {convertToLocalDate} from 'Share/utils/index'
+import {convertToLocalDate} from '@share/utils/index'
 
 class ComicDetails extends React.Component<any, any> {
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import "./module/index.scss";
-import SearchBox from 'Comics/features/search-box';
-import SortBox from 'Comics/features/sort-box';
-import ViewsBox from 'Comics/features/views-box';
+import SearchBox from '@comics/features/search-box';
+import SortBox from '@comics/features/sort-box';
+import ViewsBox from '@comics/features/views-box';
 
 interface IProps {
 

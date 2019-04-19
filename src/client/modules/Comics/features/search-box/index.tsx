@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps } from 'Comics/module/redux-connect';
+import { mapStateToProps, mapDispatchToProps } from '@comics/module/redux-connect';
 
 interface IProps {
     comics: any;

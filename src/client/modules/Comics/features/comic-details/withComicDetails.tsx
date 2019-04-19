@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './module/redux-connect';
 import "./module/index.scss";
 import { BeatLoader } from 'react-spinners';
-import ErrorBoundary from 'Share/modules/error-boudary';
+import ErrorBoundary from '@share/modules/error-boudary';
 
 interface MatchParams {
     id: string;

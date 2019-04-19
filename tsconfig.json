@@ -10,14 +10,15 @@
         "jsx": "react",
         "baseUrl": ".",
         "paths": {
-            "App/*": ["src/client/modules/App/*"],
-            "Home/*": ["src/client/modules/Home/*"],
-            "Comics/*": ["src/client/modules/Comics/*"],
-            "Share/*": ["src/client/modules/Share/*"],
-            "NotFound/*": ["src/client/modules/NotFound/*"],
-            "Redux/*": ["src/client/redux/*"],
-            "Config": ["src/client/config/index.ts"],
-            "ApiServices": ["src/client/api/index.ts"],
+            "@app/*": ["src/client/modules/App/*"],
+            "@home/*": ["src/client/modules/Home/*"],
+            "@comics/*": ["src/client/modules/Comics/*"],
+            "@share/*": ["src/client/modules/Share/*"],
+            "@not-found/*": ["src/client/modules/NotFound/*"],
+            "@redux/*": ["src/client/redux/*"],
+            "@config": ["src/client/config/index.ts"],
+            "@api-services": ["src/client/api/index.ts"],
+            "@doten-config": ["config.ts"]
         }
     },
     "include": [

@@ -31,7 +31,6 @@ function* actionRequetsFetchComicsMarvel(action) {
         }
 
     } catch (error) {
-        console.log('error', error)
         yield put(actionFetchFailComicsMarvel());
     }
 }

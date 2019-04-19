@@ -1,6 +1,6 @@
 import {
     marvelApiConfigs
-} from "Config";
+} from "@config";
 
 class ApiServices {
     private type: string;

@@ -97,6 +97,9 @@ class Comics extends React.Component<IProps, any>{
                         totalItemsCount={totalRecords}
                         pageRangeDisplayed={5}
                         onChange={(page) => this.props.onPageChange(page)}
+                        innerClass="pagination"
+                        itemClass="page-item"
+                        linkClass="page-link"
                     />
                 </div>
             </div>

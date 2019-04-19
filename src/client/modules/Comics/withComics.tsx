@@ -3,7 +3,7 @@ import { compose } from "recompose";
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from './module/redux-connect';
-import ErrorBoundary from 'Share/modules/error-boudary';
+import ErrorBoundary from '@share/modules/error-boudary';
 import { BeatLoader } from 'react-spinners';
 import './module/index.scss';
 import ComicsPageFooter from './features/footer';

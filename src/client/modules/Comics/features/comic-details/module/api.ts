@@ -1,4 +1,4 @@
-import ApiServices from "ApiServices";
+import ApiServices from "@api-services";
 import Axios from "axios";
 
 const ComicType = "comics";

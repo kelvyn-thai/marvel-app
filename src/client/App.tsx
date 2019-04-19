@@ -1,20 +1,15 @@
 import * as React from 'react'
 import * as ReactDOM from "react-dom";
-import App from "App/index";
-import { HashRouter } from 'react-router-dom';
+import App from "@app/index";
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from 'Redux/store';
-// import * as ReactGA from "react-ga";
+import store from '@redux/store';
 
-// ReactGA.initialize('UA-138258837-1', {
-//     debug: true,
-// });
-
-ReactDOM.render(
+ReactDOM.hydrate(
     <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
             <App />
-        </HashRouter>
+        </BrowserRouter>
     </Provider>
     ,
     document.getElementById('root')

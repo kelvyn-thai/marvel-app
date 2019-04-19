@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { ACTION_REQUEST_FETCH_COMIC } from "./constants";
 import { actionFetchingComicMarvel, actionFetchedComicMarvel, actionFetchFailComicMarvel } from "./actions";
-import ComicsApi from "Comics/module/api";
+import ComicsApi from "@comics/module/api";
 
 function* actionRequetsFetchComicMarvel(action) {
     try {
