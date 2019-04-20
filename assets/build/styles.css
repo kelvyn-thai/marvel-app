@@ -1,0 +1,324 @@
+body {
+  font-family: arial;
+  background: #f8f9fb; }
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend,
+div,
+div.row {
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none !important; }
+
+.wrap {
+  margin: 0;
+  padding: 0; }
+.home-footer {
+  height: 100px;
+  background-color: #393939;
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  .home-footer p {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin: auto 0; }
+@keyframes animiate-comic-item {
+  0% {
+    opacity: 0;
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+.page-comics {
+  width: 100%;
+  min-height: 100vh; }
+  .page-comics .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }
+  .page-comics .page-comics-block {
+    width: 80%;
+    margin: 0 auto; }
+    .page-comics .page-comics-block .page-comics-block-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: auto; }
+      .page-comics .page-comics-block .page-comics-block-items .comic-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 10px;
+        margin: 10px;
+        animation: animiate-comic-item 1.5s linear; }
+        .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image {
+          margin-bottom: 20px;
+          box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4); }
+          .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image a img {
+            max-width: 100%;
+            width: 285px;
+            height: 427.5px; }
+        .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-text h5 {
+          font-size: 12px;
+          font-weight: bold;
+          text-align: center;
+          white-space: nowrap;
+          width: 285px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: 0;
+          padding: 0; }
+    .page-comics .page-comics-block .page-comics-block-items-list img {
+      height: 150px;
+      width: 150px; }
+    .page-comics .page-comics-block .page-comics-block-pagination {
+      display: flex;
+      justify-content: center; }
+
+@media screen and (max-width: 2560px) {
+  .page-comics .page-comics-block {
+    width: 90%; } }
+
+@media screen and (max-width: 1024px) {
+  .page-comics .page-comics-block .page-comics-block-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image a img {
+      max-width: 100%;
+      width: 230px;
+      height: 330px; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-text h5 {
+      width: 230px; } }
+
+@media screen and (max-width: 768px) {
+  .page-comics .page-comics-block {
+    width: 100%; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image a img {
+      max-width: 100%;
+      width: 220px;
+      height: 300px; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-text h5 {
+      width: 220px; } }
+
+@media screen and (max-width: 414px) {
+  .page-comics .page-comics-block .page-comics-block-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image a img {
+      max-width: 100%;
+      width: 150px;
+      height: 150px; }
+    .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-text h5 {
+      width: 150px; }
+  .page-comics .page-comics-block .page-comics-block-items-list {
+    font-size: 9px; }
+    .page-comics .page-comics-block .page-comics-block-items-list img {
+      height: 50px;
+      width: 50px; } }
+
+@media screen and (max-width: 320px) {
+  .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-image a img {
+    max-width: 100%;
+    width: 130px;
+    height: 130px; }
+  .page-comics .page-comics-block .page-comics-block-items .comic-item .comic-item-text h5 {
+    width: 130px; } }
+.home-header {
+  background-color: #393939; }
+  .home-header .home-header-upper {
+    margin-bottom: 5px; }
+    .home-header .home-header-upper .category {
+      display: flex;
+      justify-content: center; }
+      .home-header .home-header-upper .category li a {
+        padding: 10px;
+        display: block;
+        font-size: 13px;
+        color: #fff;
+        font-weight: bold;
+        border-bottom: solid transparent 2px;
+        transition: 0.5s all; }
+        .home-header .home-header-upper .category li a:hover {
+          border-bottom: solid red 2px;
+          transition: 0.5s all; }
+  .home-header .home-header-lower .menu {
+    display: flex;
+    justify-content: center;
+    color: #fff; }
+    .home-header .home-header-lower .menu li {
+      height: 30px;
+      margin-right: 10px;
+      margin-bottom: 5px; }
+      .home-header .home-header-lower .menu li .search-box {
+        height: 100%;
+        border: 0;
+        border-radius: 5px;
+        margin-left: 5px;
+        color: #000; }
+      .home-header .home-header-lower .menu li .sort-box {
+        height: 100%;
+        background-color: #6c757d;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        font-weight: bold; }
+        .home-header .home-header-lower .menu li .sort-box option {
+          background-color: #fff;
+          color: #000; }
+      .home-header .home-header-lower .menu li .views-box {
+        height: 100%;
+        background-color: #6c757d;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        font-weight: bold; }
+        .home-header .home-header-lower .menu li .views-box option {
+          background-color: #fff;
+          color: #000; }
+      .home-header .home-header-lower .menu li a {
+        display: block; }
+        .home-header .home-header-lower .menu li a:hover {
+          background-color: #151515; }
+
+@media screen and (max-width: 1024px) {
+  .home-header {
+    max-width: 1024px; } }
+
+@media screen and (max-width: 768px) {
+  .home-header {
+    max-width: 768px; } }
+
+@media screen and (max-width: 414px) {
+  .home-header {
+    max-width: 414px; }
+    .home-header .home-header-upper .category li a {
+      font-size: 8px; }
+    .home-header .home-header-lower {
+      font-size: 10px; } }
+
+@media screen and (max-width: 375px) {
+  .home-header {
+    max-width: 375px; } }
+
+@media screen and (max-width: 320px) {
+  .home-header {
+    max-width: 320px; }
+    .home-header .home-header-upper .category li a {
+      font-size: 6px; }
+    .home-header .home-header-lower {
+      font-size: 9px; } }
+.page-comic {
+  width: 100%;
+  background-color: #030306;
+  min-height: 100vh;
+  color: #fff; }
+  .page-comic .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }
+  .page-comic .page-comic-block {
+    width: 80%;
+    margin: 0 auto; }
+    .page-comic .page-comic-block .page-comic-block-details {
+      padding: 50px;
+      display: flex;
+      justify-content: center; }
+      .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail {
+        margin: 10px; }
+        .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail img {
+          width: 450px;
+          height: 680px; }
+      .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+        margin: 10px;
+        width: 500px;
+        height: auto; }
+        .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description .description {
+          font-weight: 600; }
+        .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description .creator {
+          display: flex;
+          flex-direction: column;
+          margin: 30px 0; }
+          .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description .creator li h5 {
+            font-weight: bold; }
+            .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description .creator li h5::first-letter {
+              text-transform: uppercase; }
+
+@media screen and (max-width: 2560px) {
+  .page-comic .page-comic-block {
+    width: 90%; } }
+
+@media screen and (max-width: 1024px) {
+  .page-comic .page-comic-block {
+    width: 100%;
+    margin: 0; } }
+
+@media screen and (max-width: 768px) {
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail img {
+    width: 260px;
+    height: 400px; }
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    margin: 10px;
+    width: 400px;
+    height: auto; }
+    .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description h1 {
+      font-size: 24px; } }
+
+@media screen and (max-width: 414px) {
+  .page-comic .page-comic-block .page-comic-block-details {
+    flex-direction: column; }
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail {
+    margin: 0 auto; }
+    .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-thumbnail img {
+      width: 160px;
+      height: 150px; }
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    margin: 10px;
+    width: 300px;
+    height: auto; }
+    .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description h1 {
+      font-size: 18px; }
+    .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description .creator {
+      display: grid;
+      grid-template-columns: 1fr 1fr; } }
+
+@media screen and (max-width: 375px) {
+  .page-comic .page-comic-block .page-comic-block-details {
+    padding: 30px; } }
+
+@media screen and (max-width: 320px) {
+  .page-comic .page-comic-block .page-comic-block-details .page-comic-block-details-description {
+    width: 280px; } }
+
+/*# sourceMappingURL=styles.css.map*/

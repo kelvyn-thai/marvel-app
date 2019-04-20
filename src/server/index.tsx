@@ -80,7 +80,7 @@ app.get('*', async (req, res, next) => {
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
         <link rel="icon" href="img/marvel-icon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="build/styles.css" rel="stylesheet"></head>
+        <link href="/build/styles.css" rel="stylesheet"></head>
         <title>Marvel App</title>
     </head>
     <body>
@@ -93,9 +93,9 @@ app.get('*', async (req, res, next) => {
         '\\u003c'
     )}
         </script>
-        <script type="text/javascript" src="build/runtime.js"></script>
-        <script type="text/javascript" src="build/vendors.js"></script>
-        <script type="text/javascript" src="build/bundle.js"></script>
+        <script type="text/javascript" src="/build/runtime.js"></script>
+        <script type="text/javascript" src="/build/vendors.js"></script>
+        <script type="text/javascript" src="/build/bundle.js"></script>
     </body>
     </html>
     `)
